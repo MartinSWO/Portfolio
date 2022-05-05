@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.1fr 1.1fr 1.3fr 1.1fr 1.1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto"
+        "fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto"
+        "fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto"
+        "fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto fondo_y_texto"
+        "mapa mapa meet-us meet-us contact-us contact-us"
+        "mapa mapa meet-us meet-us contact-us contact-us";
+    height: 100vh;
+    background-color: teal;
+}
+.return{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.fondo_y_texto {
+    grid-area: fondo_y_texto;
+    background-image: url(images/pexels-peter-fazekas-1170576.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: slide-on-load ease 600ms;
+
+}
+
+@keyframes slide-on-load {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.fondo_y_texto>h1 {
+    margin: 2%;
+    font-size: 4rem;
+    color: blanchedalmond;
+    opacity: .7;
+}
+
+
+.fondo_y_texto>.redes {
+    margin: 2%;
+}
+
+.fondo_y_texto>h4 {
+    margin: 0%;
+    color: blanchedalmond;
+    opacity: 0.5;
+}
+
+.te{
+    color:teal;
+  
+}
+
+.mapa {
+    grid-area: mapa;
+    animation: slide-on-load2 ease 600ms;
+}
+
+.meet-us {
+    grid-area: meet-us;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E9C46A;
+    animation: slide-on-load2 ease 600ms;
+}
+
+@keyframes slide-on-load2 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.meet-us>h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: teal;
+    font-size: 24px;
+    opacity: .7;
+
+}
+
+.meet-us> ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 5%;
+    list-style: none;
+    font-size: 1rem;
+}
+
+
+
+.contact-us {
+    grid-area: contact-us;
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    animation: slide-on-load2 ease 600ms;
+    
+}
+
+.contact-us > form{
+    margin: 5%;
+
+}
+
+.contact-us input{
+    border: none;
+    background:none;
+    height: 2.2rem;
+}
+
+input[type=submit]{
+    margin: 3%;
+    padding: 0% 5%;
+    background-color: #E9C46A;
+    text-align: center;
+    border: tomato;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: 200;
+    color: teal;
+}
+
+.submit:hover{
+    background-color: #E9C46A ease;
+    color: tomato ease;
+}
+
+.contact-us input::placeholder{
+    opacity: 1;
+    text-align: center;
+    color: tomato;
+    font-size: 2rem;
+    font-style: oblique;
+}
+
+
+
+@media screen and (max-width: 660px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "fondo_y_texto"
+            "fondo_y_texto"
+            "fondo_y_texto"
+            "meet-us"
+            "contact-us"
+            "mapa"
+        ;
+        height: 200vh;
+    }
+}
